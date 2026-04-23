@@ -16,13 +16,17 @@
   "author": "",
   "license": "MIT",
   "type": "module",
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "files": ["dist"],
   "bugs": {
     "url": "https://github.com/roadv91/react-ui-components/issues"
   },
   "homepage": "https://github.com/roadv91/react-ui-components#readme",
-  "dependencies": {
-    "react": "^19.2.4",
-    "react-dom": "^19.2.4"
+  "peerDependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.4",
