@@ -10,7 +10,7 @@ export default tseslint.config(
   {
     extends: [
       js.configs.recommended,
-      ...tseslint.config.recommended,
+      ...tseslint.configs.recommended,
     ],
     files: ['**/*.{ts,tsx}'],
     languageOptions: {
@@ -22,9 +22,10 @@ export default tseslint.config(
       'react-hooks': reactHooks,
     },
     rules: {
-      ...reactPlugin.config.recommended.rules,
-      ...reactHooks.config.recommended.rules,
+      ...reactPlugin.configs.recommended.rules,
+      ...reactHooks.configs.recommended.rules,
       'react/react-in-jsx-scope': 'off', // Need this since we won't be importing React in every file --> "jsx": "react-jsx" in tsconfig
+      'semi': ['error', 'never'],
     },
     settings: {
       react: {
