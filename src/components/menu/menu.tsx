@@ -1,4 +1,4 @@
-import type { FC } from "react";
+import type { FC } from "react"
 
 /**
  * Consists of a list of items from which the user can select one

@@ -1,0 +1,49 @@
+// Figma tokens: menu-item/*
+$bg-default: #ffffff;
+$bg-hover: #004cd5;
+$bg-active: #013fb0;
+$text-default: #000000;
+$text-hover: #ffffff;
+$text-active: #ffffff;
+$border-default: #efefef;
+$border-hover: #004cd5;
+$border-active: #481ca0;
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  width: 100%;
+  background-color: var(--menu-item-bg-default, #{$bg-default});
+  border-bottom: 1px solid var(--menu-item-border-default, #{$border-default});
+  cursor: pointer;
+  text-align: left;
+
+  &.selected {
+    background-color: var(--menu-item-bg-active, #{$bg-active});
+    border-bottom-color: var(--menu-item-border-active, #{$border-active});
+
+    .label {
+      color: var(--menu-item-text-active, #{$text-active});
+      font-weight: 600;
+    }
+  }
+
+  &:hover {
+    background-color: var(--menu-item-bg-hover, #{$bg-hover});
+    border-bottom-color: var(--menu-item-border-hover, #{$border-hover});
+
+    .label {
+      color: var(--menu-item-text-hover, #{$text-hover});
+      font-weight: 600;
+    }
+  }
+}
+
+.label {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--menu-item-text-default, #{$text-default});
+  text-wrap: nowrap;
+}
