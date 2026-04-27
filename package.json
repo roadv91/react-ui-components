@@ -6,7 +6,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "build-tokens": "node scripts/build-tokens.js"
   },
   "repository": {
     "type": "git",
