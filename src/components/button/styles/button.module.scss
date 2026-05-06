@@ -1,0 +1,81 @@
+@use '../../../styles/breakpoints.scss' as *;
+
+.button {
+  // Base styles shared by all
+  display: inline-flex;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid transparent; // Defining it here at the base so both buttons follow same box model rather than having different paddings
+  border-radius: 8px;
+  gap: 10px;
+  cursor: pointer;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  line-height: 1.5;
+  transition: background-color 150ms ease-in-out, border-color 150ms ease-in-out, color 150ms ease-in-out; // To animate these CSS property changes more smoothly
+
+  // Size styles
+  &.md {
+    font-size: var(--semantic-button-mobile-text-size-md);
+    padding: 8px 16px;
+    @include above-mobile {
+      font-size: var(--semantic-button-desktop-text-size-md);
+      padding: 12px 32px;
+    }
+  }
+  &.sm {
+    font-size: var(--semantic-button-mobile-text-size-sm);
+    padding: 8px 12px;
+    @include above-mobile {
+      font-size: var(--semantic-button-desktop-text-size-sm);
+      padding: 8px 20px;
+    }
+  }
+
+  // Variant styles
+  &.primary {
+    color: var(--semantic-button-primary-text);
+    background-color: var(--semantic-button-primary-bg-default);
+    &:hover:not(:disabled) { // Should not apply hover style when disabled
+      background-color: var(--semantic-button-primary-bg-hover);
+    }
+
+    &:active:not(:disabled) { // Should not apply active style when disabled
+      background-color: var(--semantic-button-primary-bg-active);
+    }
+
+    &:disabled {
+      background-color: var(--semantic-button-primary-bg-disabled);
+    }
+  }
+
+  &.secondary {
+    color: var(--semantic-button-secondary-line-default);
+    background-color: var(--semantic-button-secondary-bg);
+    border-color: var(--semantic-button-secondary-line-default);
+    &:hover:not(:disabled) { // Should not apply hover style when disabled
+      color: var(--semantic-button-secondary-line-hover);
+      border-color: var(--semantic-button-secondary-line-hover);
+    }
+
+    &:active:not(:disabled) { // Should not apply active style when disabled
+      color: var(--semantic-button-secondary-line-active);
+      border-color: var(--semantic-button-secondary-line-active);
+    }
+
+    &:disabled {
+      color: var(--semantic-button-secondary-line-disabled);
+      background-color: var(--semantic-button-secondary-bg-disabled);
+      border-color: var(--semantic-button-secondary-line-disabled);
+    }
+  }
+
+  // TODO the below code is not finalized. Figma should have updated color token for focus ring.
+  &:focus-visible {
+    outline: 2px solid var(--primitive-periwinkle-500);
+    outline-offset: 2px;
+  }
+
+
+}
