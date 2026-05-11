@@ -7,7 +7,9 @@
     "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint src",
-    "build-tokens": "node scripts/build-tokens.js"
+    "build:tokens": "node scripts/build-tokens.js", 
+    "ladle": "ladle serve",
+    "build:ladle": "ladle build"
   },
   "repository": {
     "type": "git",
@@ -31,6 +33,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.39.4",
+    "@ladle/react": "^5.1.1",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.1",
