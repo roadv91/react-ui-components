@@ -20,6 +20,8 @@ Default.args = {
   disabled: false,
 }
 
+// TODO - The `description` doesn't actually show up. Either need a `.mdx` file or need to move to Storybook.
+
 Default.argTypes = {
   label: {
     control: { type: 'text' },
