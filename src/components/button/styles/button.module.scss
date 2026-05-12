@@ -71,9 +71,8 @@
     }
   }
 
-  // TODO the below code is not finalized. Figma should have updated color token for focus ring.
   &:focus-visible {
-    outline: 2px solid var(--primitive-periwinkle-500);
+    outline: 2px solid var(--semantic-button-focus-ring);
     outline-offset: 2px;
   }
 
