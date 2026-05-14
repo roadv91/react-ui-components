@@ -1,5 +1,6 @@
 import type { FC } from "react"
 import styles from './styles/alert.module.scss'
+import Dismiss from './assets/alert-dismiss.svg'
 
 export interface AlertProps {
   /**
@@ -11,9 +12,9 @@ export interface AlertProps {
    */
   title: string
   /**
-   * Body text providing more detail about the alert.
+   * Optional body text providing more detail about the alert.
    */
-  description: string
+  description?: string
   /**
    * When true, renders a dismiss button to close the alert.
    * @default false
@@ -33,6 +34,11 @@ export interface AlertProps {
  */
 export const Alert: FC<AlertProps> = () => {
   return (
-    <div className={styles['alert']}></div>
+    <div className={styles['alert']}>
+      <div className={styles['content-container']}>
+        
+      </div>
+      <img src={Dismiss} alt="Dismiss Alert" />
+    </div>
   )
 }
