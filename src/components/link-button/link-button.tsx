@@ -46,9 +46,9 @@ export const LinkButton: FC<LinkButtonProps> = ({
   const classNames = `${styles['link-button']} ${styles[size]}${className ? ` ${className}` : ''}`
   return (
     <button type="button" {...rest} className={classNames}>
-      {showLeftIcon && <span aria-hidden="true"><Icon name="ChevronLeft" size={iconSizeMap[size]} color="currentColor" /></span>}
+      {showLeftIcon && <Icon name="ChevronLeft" size={iconSizeMap[size]} color="currentColor" />}
       {children}
-      {showRightIcon && <span aria-hidden="true"><Icon name="ChevronRight" size={iconSizeMap[size]} color="currentColor" /></span>}
+      {showRightIcon && <Icon name="ChevronRight" size={iconSizeMap[size]} color="currentColor" />}
     </button>
   )
 }
