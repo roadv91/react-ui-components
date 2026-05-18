@@ -1,6 +1,6 @@
 import type { FC } from "react"
 import styles from './styles/alert.module.scss'
-import Dismiss from './assets/alert-dismiss.svg'
+import { Icon } from '@/components/icon/icon'
 
 export interface AlertProps {
   /**
@@ -38,7 +38,7 @@ export const Alert: FC<AlertProps> = () => {
       <div className={styles['content-container']}>
         
       </div>
-      <img src={Dismiss} alt="Dismiss Alert" />
+      <Icon name="Dismiss" decorative={false} />
     </div>
   )
 }

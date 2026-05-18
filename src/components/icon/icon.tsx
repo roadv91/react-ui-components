@@ -1,7 +1,7 @@
 import type { FC } from "react"
 import { iconComponentsMap } from './features/icon-components-map'
 
-export type IconName = 'ChevronLeft' | 'ChevronRight'
+export type IconName = 'ChevronLeft' | 'ChevronRight' | 'Dismiss' | 'Error' | 'Info' | 'Success' | 'Warning'
 
 export interface IconProps {
   name: IconName
