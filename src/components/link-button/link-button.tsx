@@ -16,6 +16,10 @@ export interface LinkButtonProps extends React.ButtonHTMLAttributes<HTMLButtonEl
    */
   children: string
   /**
+   * Handler called when the button is clicked.
+   */
+  onClick: React.MouseEventHandler<HTMLButtonElement>
+  /**
    * @default 'md'
    */
   size?: 'sm' | 'md' | 'lg' | 'xl' | 'xxl'

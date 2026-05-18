@@ -18,6 +18,7 @@ Adaptive.args = {
   size: 'md',
   showLeftIcon: false,
   showRightIcon: false,
+  onClick: () => {},
 }
 
 Adaptive.argTypes = {
@@ -27,8 +28,8 @@ Adaptive.argTypes = {
   showRightIcon: { control: { type: 'boolean' } },
 }
 
-export const Small: Story = () => <LinkButton size="sm" showLeftIcon showRightIcon>Learn more</LinkButton>
-export const Medium: Story = () => <LinkButton size="md" showLeftIcon showRightIcon>Learn more</LinkButton>
-export const Large: Story = () => <LinkButton size="lg" showLeftIcon showRightIcon>Learn more</LinkButton>
-export const ExtraLarge: Story = () => <LinkButton size="xl" showLeftIcon showRightIcon>Learn more</LinkButton>
-export const ExtraExtraLarge: Story = () => <LinkButton size="xxl" showLeftIcon showRightIcon>Learn more</LinkButton>
+export const Small: Story = () => <LinkButton size="sm" showLeftIcon showRightIcon onClick={() => {}}>Learn more</LinkButton>
+export const Medium: Story = () => <LinkButton size="md" showLeftIcon showRightIcon onClick={() => {}}>Learn more</LinkButton>
+export const Large: Story = () => <LinkButton size="lg" showLeftIcon showRightIcon onClick={() => {}}>Learn more</LinkButton>
+export const ExtraLarge: Story = () => <LinkButton size="xl" showLeftIcon showRightIcon onClick={() => {}}>Learn more</LinkButton>
+export const ExtraExtraLarge: Story = () => <LinkButton size="xxl" showLeftIcon showRightIcon onClick={() => {}}>Learn more</LinkButton>
