@@ -1,0 +1,49 @@
+@use '../../../styles/breakpoints.scss' as *;
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px; 
+
+  color: var(--semantic-link-default);
+  font-family: 'Open Sans', sans-serif;
+  text-decoration: underline;
+  cursor: pointer;
+
+  transition: color 150ms ease-in-out;
+
+  &:hover {
+    color: var(--semantic-link-hover);
+  }
+
+  &:active {
+    color: var(--semantic-link-active);
+  }
+
+  // TODO: replace with a semantic link focus token once added to Figma
+  &:focus-visible {
+    outline: 2px solid var(--primitive-periwinkle-500);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  &.sm {
+    font-size: 12px;
+  }
+
+  &.md {
+    font-size: 14px;
+  }
+
+  &.lg {
+    font-size: 16px;
+  }
+
+  &.xl {
+    font-size: 20px;
+  }
+
+  &.xxl {
+    font-size: 28px;
+  }
+}
