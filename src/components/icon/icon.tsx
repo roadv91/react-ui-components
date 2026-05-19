@@ -31,7 +31,7 @@ export interface IconProps {
 export const Icon: FC<IconProps> = ({ name, size = 24, color = 'black', decorative = true }) => {
   const PathComponent = iconComponentsMap[name]
   return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill={color} aria-hidden={decorative || undefined}>
+    <svg width={size} height={size} viewBox="0 0 24 24" fill={color} aria-hidden={decorative || undefined} style={{ flexShrink: 0 }}>
       <PathComponent />
     </svg>
   )
