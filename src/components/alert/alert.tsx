@@ -72,7 +72,7 @@ export const Alert: FC<AlertProps> = ({ type, title, description, showDismiss, l
           onClick={() => setVisible(false)}
           aria-label="Dismiss alert"
         >
-          <Icon name="Dismiss" />
+          <Icon name="Dismiss" size={20} />
         </button>
       )}
     </div>
