@@ -1,7 +1,7 @@
 import type { FC } from "react"
 import { iconComponentsMap } from './features/icon-components-map'
 
-export type IconName = 'ChevronLeft' | 'ChevronRight'
+export type IconName = 'ChevronLeft' | 'ChevronRight' | 'Dismiss' | 'Error' | 'Info' | 'Success' | 'Warning'
 
 export interface IconProps {
   name: IconName
@@ -31,7 +31,7 @@ export interface IconProps {
 export const Icon: FC<IconProps> = ({ name, size = 24, color = 'black', decorative = true }) => {
   const PathComponent = iconComponentsMap[name]
   return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill={color} aria-hidden={decorative || undefined}>
+    <svg width={size} height={size} viewBox="0 0 24 24" fill={color} aria-hidden={decorative || undefined} style={{ flexShrink: 0 }}>
       <PathComponent />
     </svg>
   )
