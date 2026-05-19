@@ -13,6 +13,7 @@
   --primitive-grey-400: #a3a2a2;
   --primitive-grey-500: #8f8f8f;
   --primitive-grey-800: #535353;
+  --primitive-grey-900: #262626;
   --primitive-red-100: #f2dbdb;
   --primitive-red-300: #c40000;
   --primitive-red-500: #970000;
@@ -45,11 +46,11 @@
   --semantic-button-secondary-line-active: var(--primitive-blue-600);
   --semantic-button-secondary-bg: var(--primitive-white);
   --semantic-button-secondary-bg-disabled: var(--primitive-grey-100);
-  --semantic-button-focus-ring: var(--primitive-periwinkle-500);
   --semantic-button-mobile-text-size-md: 24px;
   --semantic-button-mobile-text-size-sm: 18px;
   --semantic-button-desktop-text-size-md: 28px;
   --semantic-button-desktop-text-size-sm: 20px;
+  --semantic-button-focus-ring: var(--primitive-periwinkle-500);
   --semantic-text-primary: var(--primitive-black);
   --semantic-text-secondary: var(--primitive-grey-400);
   --semantic-text-error: var(--primitive-red-300);
@@ -66,9 +67,13 @@
   --semantic-alert-info-bg: var(--primitive-blue-200);
   --semantic-alert-success-line: var(--primitive-green-600);
   --semantic-alert-success-bg: var(--primitive-green-200);
+  --semantic-alert-dismiss-icon-default: var(--primitive-grey-800);
+  --semantic-alert-dismiss-icon-hover: var(--primitive-grey-900);
+  --semantic-alert-dismiss-icon-active: var(--primitive-black);
   --semantic-link-default: var(--primitive-blue-400);
   --semantic-link-hover: var(--primitive-blue-500);
   --semantic-link-active: var(--primitive-blue-600);
+  --semantic-link-focus-ring: var(--primitive-periwinkle-500);
   --semantic-border-primary: var(--primitive-grey-500);
   --semantic-pill-neutral-bg: var(--primitive-grey-100);
   --semantic-pill-neutral-border: var(--primitive-grey-500);

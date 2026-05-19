@@ -78,4 +78,14 @@
   border: none;
   padding: 0;
   cursor: pointer;
+  color: var(--semantic-alert-dismiss-icon-default);
+  transition: color 150ms ease-in-out;
+
+  &:hover {
+    color: var(--semantic-alert-dismiss-icon-hover);
+  }
+
+  &:active {
+    color: var(--semantic-alert-dismiss-icon-active);
+  }
 }

@@ -20,9 +20,8 @@
     color: var(--semantic-link-active);
   }
 
-  // TODO: replace with a semantic link focus token once added to Figma
   &:focus-visible {
-    outline: 2px solid var(--primitive-periwinkle-500);
+    outline: 2px solid var(--semantic-link-focus-ring);
     outline-offset: 2px;
     border-radius: 2px;
   }
