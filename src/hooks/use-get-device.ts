@@ -2,9 +2,14 @@ import { useState, useEffect } from 'react'
 
 type Device = 'mobile' | 'tablet' | 'desktop'
 
+// if typeof window === undefined, then we're not on a browser
+
+const mobileQuery = typeof window !== 'undefined' ? window.matchMedia('(max-width: 767px)') : null
+const tabletQuery = typeof window !== 'undefined' ? window.matchMedia('(max-width: 1199px)') : null
+
 const getDevice = (): Device => {
-  if (window.matchMedia('(max-width: 767px)').matches) return 'mobile'
-  if (window.matchMedia('(min-width: 768px) and (max-width: 1199px)').matches) return 'tablet'
+  if (mobileQuery?.matches) return 'mobile'
+  if (tabletQuery?.matches) return 'tablet'
   return 'desktop'
 }
 
@@ -20,17 +25,16 @@ export const useGetDevice = (): Device => {
   const [device, setDevice] = useState<Device>(getDevice)
 
   useEffect(() => {
-    const mobileQuery = window.matchMedia('(max-width: 767px)')
-    const tabletQuery = window.matchMedia('(min-width: 768px) and (max-width: 1199px)')
-
     const handleChange = () => setDevice(getDevice())
 
-    mobileQuery.addEventListener('change', handleChange)
-    tabletQuery.addEventListener('change', handleChange)
+    handleChange() // sync state on mount in case of resize before listeners attached
+
+    mobileQuery?.addEventListener('change', handleChange)
+    tabletQuery?.addEventListener('change', handleChange)
 
     return () => {
-      mobileQuery.removeEventListener('change', handleChange)
-      tabletQuery.removeEventListener('change', handleChange)
+      mobileQuery?.removeEventListener('change', handleChange)
+      tabletQuery?.removeEventListener('change', handleChange)
     }
   }, [])
 
