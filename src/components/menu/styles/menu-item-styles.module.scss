@@ -9,22 +9,23 @@
   cursor: pointer;
   text-align: left;
 
-  &.selected {
-    background-color: var(--semantic-menu-item-bg-active);
-    border-bottom-color: var(--semantic-menu-item-border-active);
-
-    .label {
-      color: var(--semantic-menu-item-text-active);
-      font-weight: 600;
-    }
-  }
-
   &:hover {
     background-color: var(--semantic-menu-item-bg-hover);
     border-bottom-color: var(--semantic-menu-item-border-hover);
 
     .label {
       color: var(--semantic-menu-item-text-hover);
+      font-weight: 600;
+    }
+  }
+
+  &.selected,
+  &:active {
+    background-color: var(--semantic-menu-item-bg-active);
+    border-bottom-color: var(--semantic-menu-item-border-active);
+
+    .label {
+      color: var(--semantic-menu-item-text-active);
       font-weight: 600;
     }
   }
