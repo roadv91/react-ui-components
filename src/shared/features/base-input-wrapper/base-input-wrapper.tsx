@@ -11,8 +11,9 @@ export const getErrorId = (inputId: string) => `${inputId}-error`
 export interface BaseInputWrapperProps {
   /** ID of the input element — used for the label's `htmlFor`. */
   inputId: string
+  /** Label text rendered above the input and linked to it via `htmlFor`. */
   label?: string
-  /** Marks the field as required. Pass to the underlying input as `required` and `aria-required`. */
+  /** Marks the field as required. Pass to the underlying input as `required` and `aria-required`. @default false */
   required?: boolean
   /** Shows the required asterisk (*) next to the label. Only has effect when `required` is true. @default true */
   showRequiredIndicator?: boolean
@@ -20,8 +21,9 @@ export interface BaseInputWrapperProps {
   description?: string
   /** Error text shown below the input in red. Takes priority over `description`. */
   errorMessage?: string
-  /** @default 'md' */
+  /** Controls the visual size of the input. @default 'md' */
   size?: InputSize
+  /** The input element rendered inside the wrapper. */
   children: ReactNode
 }
 
