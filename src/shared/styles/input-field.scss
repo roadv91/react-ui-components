@@ -1,0 +1,53 @@
+// Shared mixins for input field elements. Used by all individual input components.
+// Include in this order: input-field-base → size mixin (md or sm) → input-field-states
+
+@mixin input-field-base {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px;
+  border: 1px solid;
+  outline: none;
+  font-family: inherit;
+  color: var(--semantic-text-primary);
+  background-color: var(--semantic-input-bg);
+
+  &::placeholder {
+    color: var(--semantic-input-placeholder);
+  }
+
+  &:disabled {
+    background-color: var(--semantic-input-bg-disabled);
+    // TODO Add Figma token for input text color when disabled
+    color: var(--semantic-input-placeholder);
+    cursor: not-allowed;
+  }
+}
+
+@mixin input-field-md {
+  height: 44px;
+  font-size: 16px;
+  border-radius: 4px;
+  border-color: var(--semantic-input-border-default-md);
+}
+
+@mixin input-field-sm {
+  height: 34px;
+  font-size: 12px;
+  border-radius: 2px;
+  border-color: var(--semantic-input-border-default-sm);
+}
+
+// Must be included AFTER the size mixin so these override the default border-color.
+@mixin input-field-states {
+  &:focus-visible {
+    border-color: var(--semantic-input-border-focus);
+  }
+
+  &.error {
+    border-color: var(--semantic-input-border-error);
+  }
+
+  &.error:focus-visible {
+    border-color: var(--semantic-input-border-focus);
+  }
+}

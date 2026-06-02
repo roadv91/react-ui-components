@@ -1,0 +1,69 @@
+@use '../../../styles/breakpoints.scss' as *;
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  color: var(--semantic-input-label);
+
+  .md & {
+    font-size: 14px;
+  }
+
+  .sm & {
+    font-size: 12px;
+  }
+}
+
+.required {
+  color: var(--semantic-input-label);
+}
+
+.input-and-desc {
+  display: flex;
+  flex-direction: column;
+
+  .md & {
+    gap: 8px;
+  }
+
+  .sm & {
+    gap: 6px;
+  }
+}
+
+.description {
+  line-height: 1.2;
+  color: var(--semantic-input-desc);
+  width: 100%;
+
+  .md & {
+    font-size: 12px;
+  }
+
+  .sm & {
+    font-size: 10px;
+  }
+}
+
+.error-message {
+  line-height: 1.2;
+  color: var(--semantic-input-error);
+  width: 100%;
+
+  .md & {
+    font-size: 12px;
+  }
+
+  .sm & {
+    font-size: 10px;
+  }
+}
