@@ -4,7 +4,10 @@ import { BaseInputWrapper, getAriaDescribedBy } from '@/shared/features/base-inp
 import { useInputState } from '@/shared/hooks/use-input-state'
 import styles from './styles/number-input.module.scss'
 
-export type NumberInputProps = BaseInputProps
+export interface NumberInputProps extends BaseInputProps {
+  /** Maximum number of decimal places allowed. Values with more decimals are trimmed on change. */
+  maxDecimals?: number
+}
 
 export const NumberInput: FC<NumberInputProps> = ({
   id,
@@ -19,9 +22,21 @@ export const NumberInput: FC<NumberInputProps> = ({
   description,
   errorMessage,
   size = 'md',
+  maxDecimals,
   ...rest
 }) => {
-  const { currentValue, handleChange } = useInputState(value, initialValue, onChange)
+  const { currentValue, handleChange: updateValue } = useInputState(value, initialValue, onChange)
+
+  const handleChange = (newValue: string) => {
+    if (maxDecimals !== undefined) {
+      const dotIndex = newValue.indexOf('.')
+      if (dotIndex !== -1 && newValue.length - dotIndex - 1 > maxDecimals) {
+        newValue = newValue.slice(0, dotIndex + maxDecimals + 1)
+      }
+    }
+    updateValue(newValue)
+  }
+
   const classNames = `${styles['input']} ${styles[size]}${errorMessage ? ` ${styles['error']}` : ''}${className ? ` ${className}` : ''}`
 
   return (

@@ -12,4 +12,16 @@
   }
 
   @include input-field-states;
+
+  // Hide native spin buttons (Chrome/Safari/Edge — injected as pseudo-elements inside the input)
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  // Hide native spin buttons (Firefox — controlled via appearance on the input itself)
+  &[type='number'] {
+    -moz-appearance: textfield;
+  }
 }
