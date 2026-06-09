@@ -8,6 +8,10 @@ export const getDescriptionId = (inputId: string) => `${inputId}-description`
 /** Returns the `id` used on the error span — pass to `aria-describedby` on the input. */
 export const getErrorId = (inputId: string) => `${inputId}-error`
 
+/** Returns the correct `aria-describedby` value — error id when errored, description id when description exists, otherwise undefined. */
+export const getAriaDescribedBy = (inputId: string, errorMessage?: string, description?: string): string | undefined =>
+  errorMessage ? getErrorId(inputId) : description ? getDescriptionId(inputId) : undefined
+
 export interface BaseInputWrapperProps {
   /** ID of the input element — used for the label's `htmlFor`. */
   inputId: string
