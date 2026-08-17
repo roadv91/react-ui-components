@@ -2,7 +2,7 @@ import type { StoryDefault, Story } from '@ladle/react'
 import { TextInput, type TextInputProps } from './text-input'
 
 export default {
-  title: 'TextInput'
+  title: 'Text Input'
 } satisfies StoryDefault
 
 type Args = Omit<TextInputProps, 'id'>
