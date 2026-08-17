@@ -1,28 +1,28 @@
 import type { StoryDefault, Story } from '@ladle/react'
-import { NumberInput, type NumberInputProps } from './number-input'
+import { PasswordInput, type PasswordInputProps } from './password-input'
 
 export default {
-  title: 'Number Input'
+  title: 'Password Input'
 } satisfies StoryDefault
 
-type Args = Omit<NumberInputProps, 'id'>
+type Args = Omit<PasswordInputProps, 'id'>
 
 export const Adaptive: Story<Args> = (props) => (
   <div style={{ width: '240px' }}>
-    <NumberInput id="adaptive-input" {...props} />
+    <PasswordInput id="adaptive-input" {...props} />
   </div>
 )
 
 Adaptive.args = {
-  label: 'Label',
-  placeholder: 'Placeholder',
+  label: 'Password',
+  placeholder: 'Enter password',
   description: 'Helper description',
   errorMessage: '',
   required: false,
   showRequiredIndicator: true,
   disabled: false,
   size: 'md',
-  allowNegative: true,
+  allowToggle: true,
 }
 
 Adaptive.argTypes = {
@@ -34,8 +34,7 @@ Adaptive.argTypes = {
   required: { control: { type: 'boolean' } },
   showRequiredIndicator: { control: { type: 'boolean' } },
   disabled: { control: { type: 'boolean' } },
-  allowNegative: { control: { type: 'boolean' } },
-  maxDecimals: { control: { type: 'number' } },
+  allowToggle: { control: { type: 'boolean' } },
 }
 
 const cellStyle: React.CSSProperties = { display: 'flex', flexDirection: 'column', gap: '4px' }
@@ -51,36 +50,36 @@ export const AllStates: Story = () => (
 
       <div style={cellStyle}>
         <span style={labelStyle}>MD</span>
-        <NumberInput id="md-default" size="md" label="Label" placeholder="0" description="Helper description" />
+        <PasswordInput id="md-default" size="md" label="Password" placeholder="Enter password" description="Helper description" />
       </div>
       <div style={cellStyle}>
         <span style={labelStyle}>MD</span>
-        <NumberInput id="md-required" size="md" label="Label" placeholder="0" description="Helper description" required />
+        <PasswordInput id="md-required" size="md" label="Password" placeholder="Enter password" description="Helper description" required />
       </div>
       <div style={cellStyle}>
         <span style={labelStyle}>MD</span>
-        <NumberInput id="md-error" size="md" label="Label" placeholder="0" errorMessage="This field is required" />
+        <PasswordInput id="md-error" size="md" label="Password" placeholder="Enter password" errorMessage="Password is required" />
       </div>
       <div style={cellStyle}>
         <span style={labelStyle}>MD</span>
-        <NumberInput id="md-disabled" size="md" label="Label" initialValue="42" description="Helper description" disabled />
+        <PasswordInput id="md-disabled" size="md" label="Password" initialValue="hunter2" description="Helper description" disabled />
       </div>
 
       <div style={cellStyle}>
         <span style={labelStyle}>SM</span>
-        <NumberInput id="sm-default" size="sm" label="Label" placeholder="0" description="Helper description" />
+        <PasswordInput id="sm-default" size="sm" label="Password" placeholder="Enter password" description="Helper description" />
       </div>
       <div style={cellStyle}>
         <span style={labelStyle}>SM</span>
-        <NumberInput id="sm-required" size="sm" label="Label" placeholder="0" description="Helper description" required />
+        <PasswordInput id="sm-required" size="sm" label="Password" placeholder="Enter password" description="Helper description" required />
       </div>
       <div style={cellStyle}>
         <span style={labelStyle}>SM</span>
-        <NumberInput id="sm-error" size="sm" label="Label" placeholder="0" errorMessage="This field is required" />
+        <PasswordInput id="sm-error" size="sm" label="Password" placeholder="Enter password" errorMessage="Password is required" />
       </div>
       <div style={cellStyle}>
         <span style={labelStyle}>SM</span>
-        <NumberInput id="sm-disabled" size="sm" label="Label" initialValue="42" description="Helper description" disabled />
+        <PasswordInput id="sm-disabled" size="sm" label="Password" initialValue="hunter2" description="Helper description" disabled />
       </div>
     </div>
   </div>

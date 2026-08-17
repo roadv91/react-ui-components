@@ -8,7 +8,7 @@
   border: 1px solid;
   outline: none;
   font-family: inherit;
-  color: var(--semantic-text-primary);
+  color: var(--semantic-input-text-default);
   background-color: var(--semantic-input-bg);
 
   &::placeholder {
@@ -17,8 +17,7 @@
 
   &:disabled {
     background-color: var(--semantic-input-bg-disabled);
-    // TODO Add Figma token for input text color when disabled
-    color: var(--semantic-input-placeholder);
+    color: var(--semantic-input-text-disabled);
     cursor: not-allowed;
   }
 }
