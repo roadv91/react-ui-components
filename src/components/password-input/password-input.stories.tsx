@@ -22,7 +22,7 @@ Adaptive.args = {
   showRequiredIndicator: true,
   disabled: false,
   size: 'md',
-  showToggle: true,
+  allowToggle: true,
 }
 
 Adaptive.argTypes = {
@@ -34,7 +34,7 @@ Adaptive.argTypes = {
   required: { control: { type: 'boolean' } },
   showRequiredIndicator: { control: { type: 'boolean' } },
   disabled: { control: { type: 'boolean' } },
-  showToggle: { control: { type: 'boolean' } },
+  allowToggle: { control: { type: 'boolean' } },
 }
 
 const cellStyle: React.CSSProperties = { display: 'flex', flexDirection: 'column', gap: '4px' }

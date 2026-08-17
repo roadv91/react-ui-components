@@ -46,11 +46,11 @@
   --semantic-button-secondary-line-active: var(--primitive-blue-600);
   --semantic-button-secondary-bg: var(--primitive-white);
   --semantic-button-secondary-bg-disabled: var(--primitive-grey-100);
+  --semantic-button-focus-ring: var(--primitive-periwinkle-500);
   --semantic-button-mobile-text-size-md: 24px;
   --semantic-button-mobile-text-size-sm: 18px;
   --semantic-button-desktop-text-size-md: 28px;
   --semantic-button-desktop-text-size-sm: 20px;
-  --semantic-button-focus-ring: var(--primitive-periwinkle-500);
   --semantic-text-primary: var(--primitive-black);
   --semantic-text-secondary: var(--primitive-grey-400);
   --semantic-text-error: var(--primitive-red-300);
@@ -101,6 +101,13 @@
   --semantic-input-error: var(--primitive-red-300);
   --semantic-input-bg: var(--primitive-white);
   --semantic-input-bg-disabled: var(--primitive-grey-100);
+  --semantic-input-text-disabled: var(--primitive-grey-400);
+  --semantic-input-text-default: var(--primitive-black);
+  --semantic-input-icon: var(--primitive-grey-400);
+  --semantic-input-icon-area-md: 40px;
+  --semantic-input-icon-area-sm: 36px;
+  --semantic-input-icon-size-md: 20px;
+  --semantic-input-icon-size-sm: 16px;
   --semantic-title-text-size-desktop: 48px;
   --semantic-title-text-size-mobile: 32px;
   --semantic-title-desc-text-size-mobile: 20px;

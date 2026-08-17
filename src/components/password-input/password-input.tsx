@@ -8,7 +8,7 @@ import styles from './styles/password-input.module.scss'
 
 export interface PasswordInputProps extends BaseInputProps {
   /** Whether to show the visibility toggle button. @default true */
-  showToggle?: boolean
+  allowToggle?: boolean
 }
 
 export const PasswordInput: FC<PasswordInputProps> = ({
@@ -24,17 +24,17 @@ export const PasswordInput: FC<PasswordInputProps> = ({
   description,
   errorMessage,
   size = 'md',
-  showToggle = true,
+  allowToggle = true,
   ...rest
 }) => {
   const { currentValue, handleChange } = useInputState(value, initialValue, onChange)
   const [showPassword, setShowPassword] = useState(false)
+  const showToggle = allowToggle && !disabled
 
-  // Reset visibility when the toggle becomes unavailable — either because `showToggle` 
-  // was turned off or the input was disabled.
+  // Reset visibility when the toggle becomes unavailable
   useEffect(() => {
-    if (!showToggle || disabled) setShowPassword(false)
-  }, [showToggle, disabled])
+    if (!showToggle) setShowPassword(false)
+  }, [showToggle])
 
   const classNames = `${styles['input']} ${styles[size]}${errorMessage ? ` ${styles['error']}` : ''}${showToggle ? ` ${styles['with-toggle']}` : ''}${className ? ` ${className}` : ''}`
 
@@ -62,17 +62,17 @@ export const PasswordInput: FC<PasswordInputProps> = ({
           aria-invalid={!!errorMessage || undefined}
           aria-describedby={getAriaDescribedBy(id, errorMessage, description)}
         />
-        {showToggle && !disabled && (
+        {showToggle && (
           <button
             type="button"
-            className={styles['toggle']}
+            className={`${styles['toggle']} ${styles[size]}`}
             onClick={() => setShowPassword(prev => !prev)}
             aria-label={showPassword ? 'Hide password' : 'Show password'}
             aria-controls={id}
           >
             <Icon
               name={showPassword ? 'EyeClosed' : 'EyeOpen'}
-              size={size === 'md' ? 20 : 16} // TODO create Figma tokens for this
+              size={size === 'md' ? 20 : 16}
               color="currentColor"
             />
           </button>
